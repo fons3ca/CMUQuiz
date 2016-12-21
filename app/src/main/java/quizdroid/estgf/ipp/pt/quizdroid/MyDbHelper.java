@@ -51,6 +51,27 @@ public class MyDbHelper extends SQLiteOpenHelper {
 
     }
 
+    public ArrayList<Pergunta> getPerguntasTodas(Context context){
+        ArrayList<Pergunta> perguntas = new ArrayList<>();
+        String sql;
+
+        MyDbHelper dbHelper = new MyDbHelper(context);
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        sql = "SELECT * FROM tblPergunta";
+        Cursor c = db.rawQuery(sql,null);
+        if(c != null && c.moveToFirst()){
+            do{
+                perguntas.add( new Pergunta(c.getInt(0),c.getInt(7), c.getString(1),
+                        c.getString(2), c.getString(3), c.getString(4), c.getString(5),
+                        c.getString(6), c.getInt(8), c.getInt(9)));
+            }while(c.moveToNext());
+        }
+
+        return perguntas;
+    }
+
+
+
     public ArrayList<Pergunta> getPerguntasByNivel(Context context, int idNivel){
         ArrayList<Pergunta> perguntas = new ArrayList<>();
         String sql;
@@ -107,5 +128,7 @@ public class MyDbHelper extends SQLiteOpenHelper {
 
         return perguntas;
     }
+
+
 
 }

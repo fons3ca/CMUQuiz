@@ -25,6 +25,7 @@
             android:value="@integer/google_play_services_version" />
 
         <activity android:name=".PreferenceActivity"></activity>
+        <activity android:name=".StatsActivity"></activity>
     </application>
 
 </manifest>
