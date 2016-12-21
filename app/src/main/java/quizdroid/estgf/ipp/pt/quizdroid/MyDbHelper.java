@@ -48,7 +48,6 @@ public class MyDbHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE tblJogo");
         db.execSQL("DROP TABLE tblPergunta");
         db.execSQL("DROP TABLE tblJogadas");
-
     }
 
     public ArrayList<Pergunta> getPerguntasTodas(Context context){
