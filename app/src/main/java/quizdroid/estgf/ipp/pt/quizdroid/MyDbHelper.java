@@ -39,7 +39,6 @@ public class MyDbHelper extends SQLiteOpenHelper {
         db.execSQL("INSERT INTO tblPergunta (pergunta, resp1, resp2, resp3, resp4, respCorreta, nId, pontuacao, cId) VALUES('Que nome era dado à carta de libertação de um escravo?', 'Alforria', 'Carta de Libertaçao', 'Carta de condução', 'Alvará', 'Alforria', 1, 100, 1) ");
         db.execSQL("INSERT INTO tblPergunta (pergunta, resp1, resp2, resp3, resp4, respCorreta, nId, pontuacao, cId) VALUES('A quantos graus centígrados na escala Celsius a água ferve?', '100º', '77º', '90º', '-100º', '100º', 1, 100, 1) ");
         db.execSQL("INSERT INTO tblPergunta (pergunta, resp1, resp2, resp3, resp4, respCorreta, nId, pontuacao, cId) VALUES('Qual é o menor e mais quente planeta do sistema solar?', 'Mercurio', 'Saturno', 'Terra', 'Marte', 'Mercurio', 1, 100, 1) ");
-        //teste
     }
 
     @Override
