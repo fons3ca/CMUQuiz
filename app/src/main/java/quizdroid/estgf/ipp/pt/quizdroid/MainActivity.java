@@ -60,7 +60,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if(v.getId() == R.id.btn_play){
+        if(v.getId() == R.id.btn_continuar){
+            /**TODO: Descobrir qual o tipo de jogo que tem pendente
+                            e comecar essa activity mandando no putExtra("CONTINUAR", "SIM");
+             */
+        }else if(v.getId() == R.id.btn_play){
             Intent mIntent = new Intent(this, JogoActivity.class);
             startActivity(mIntent);
         }else if(v.getId() == R.id.btn_stats){

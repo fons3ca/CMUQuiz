@@ -25,10 +25,13 @@ public class JogoActivity extends AppCompatActivity implements View.OnClickListe
     private ArrayList<Pergunta> listaPerguntas = new ArrayList<>();
     private int idPerguntaAtual;
     private Utilizador utilizador;
+    private int idJogo;
+    private int idUser;
     private int idCategoria;
     private int idNivel;
 
-    private SharedPreferences mSharedPreferences;
+
+    private SharedPreferences mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
     private TextView pergunta;
     private TextView pontos;
@@ -47,6 +50,19 @@ public class JogoActivity extends AppCompatActivity implements View.OnClickListe
     public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
         setContentView(R.layout.activity_main);
+        MyDbHelper dbHelper = new MyDbHelper(this);
+
+        idUser = mSharedPreferences.getInt("pref_user",0);
+
+        utilizador = dbHelper.getUtilizador(this,idUser);
+
+        String continuar = getIntent().getStringExtra("CONTINUAR");
+
+        if(continuar==null) {
+            idJogo = dbHelper.startJogo(this, idNivel, idCategoria, utilizador.getId());
+        }else{
+
+        }
 
         initData();
 
@@ -67,9 +83,9 @@ public class JogoActivity extends AppCompatActivity implements View.OnClickListe
         btn3 = (Button)findViewById(R.id.txt_resposta3);
         btn4 = (Button)findViewById(R.id.txt_resposta4);
         btn1.setOnClickListener(this);
-        btn1.setOnClickListener(this);
-        btn1.setOnClickListener(this);
-        btn1.setOnClickListener(this);
+        btn2.setOnClickListener(this);
+        btn3.setOnClickListener(this);
+        btn4.setOnClickListener(this);
 
 
     }
@@ -110,7 +126,7 @@ public class JogoActivity extends AppCompatActivity implements View.OnClickListe
 
     private void isCorrect(String resposta){
         if(resposta.equals(listaPerguntas.get(idPerguntaAtual).getRespostaCerta())){
-            //TODO: DIALOG: YEAH, ACERTASTE!!! Deseja continuar? (Botao SIM, Botao NAO)
+            //TODO: DIALOG: YEAH, ACERTASTE!!! (DIALOG) Deseja continuar? (Botao SIM, Botao NAO)
 
             //TODO: GUARDAR NA BASE DE DADOS
 

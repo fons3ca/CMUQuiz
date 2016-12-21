@@ -50,6 +50,34 @@ public class MyDbHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE tblJogadas");
     }
 
+    // Linha para guardar estado do jogo (alterar para editar xD)
+    // db.execSQL("INSERT INTO tblJogo(uId, nId, cId, publicHelp, phoneHelp, fiftyFiftyHelp, terminated, pontuacao) VALUES(" + idUtilizador + " , " + idNivel + " , " + idCategoria + " , " + ajudaPublico +" , " + ajudaTelefone + " , " + ajudaTelefone + " , " + jogoTerminado + " , " + pontuacao + ")");
+
+
+    public int startJogo(Context context, int idNivel, int idCategoria, int idUtilizador){
+        int idJogo = -1;
+        boolean control = true;
+        MyDbHelper dbHelper = new MyDbHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        db.execSQL("INSERT INTO tblJogo(uId, nId, cId, publicHelp, phoneHelp, fiftyFiftyHelp, terminated, pontuacao) VALUES(" + idUtilizador + " , " + idNivel + " , " + idCategoria + " , 1 , 1 , 1, 0, 0 )");
+
+        String sql = "SELECT jId from tblJogo order by jId DESC";
+        Cursor c = db.rawQuery(sql,null);
+        if(c != null && c.moveToFirst()){
+            do {
+                if (control) {
+                    idJogo = c.getInt(0);
+                    control = false;
+                } else {
+                    db.execSQL("UPDATE tblJogo SET terminated=1 WHERE jId=" + c.getInt(0) + "");
+                    db.execSQL("DELETE FROM tblJogadas WHERE jId=" + c.getInt(0) + "");
+                }
+            }while (c.moveToNext());
+        }
+        return idJogo;
+    }
+
+
     public ArrayList<Pergunta> getPerguntasTodas(Context context){
         ArrayList<Pergunta> perguntas = new ArrayList<>();
         String sql;
@@ -128,6 +156,35 @@ public class MyDbHelper extends SQLiteOpenHelper {
         return perguntas;
     }
 
+    public Jogo getJogo(Context context, int idUser){
+        Jogo jogo = null;
+        String sql;
+        MyDbHelper dbHelper = new MyDbHelper(context);
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
 
+        sql = "SELECT * FROM tblJogo WHERE uId='" + idUser +"' AND terminated = 0";
+        Cursor c = db.rawQuery(sql,null);
+        if(c != null && c.moveToFirst()){
+            jogo = new Jogo(c.getInt(0), c.getInt(2), c.getInt(3), c.getInt(1), c.getInt(4), c.getInt(5), c.getInt(6),c.getInt(7), c.getInt(8));
+        }
+
+        return jogo;
+    }
+
+    public Utilizador getUtilizador( Context context, int idUser){
+        Utilizador utilizador = null;
+        String sql;
+
+        MyDbHelper dbHelper = new MyDbHelper(context);
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+
+        sql = "SELECT * FROM tblUtilizador WHERE uId='" + idUser +"'";
+        Cursor c = db.rawQuery(sql,null);
+        if(c != null && c.moveToFirst()){
+            utilizador = new Utilizador(c.getInt(0), c.getString(1), c.getString(2), c.getInt(3), c.getInt(4), c.getInt(5));
+        }
+
+        return utilizador;
+    }
 
 }
