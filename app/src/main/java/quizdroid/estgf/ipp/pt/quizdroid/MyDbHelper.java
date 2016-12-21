@@ -29,6 +29,17 @@ public class MyDbHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE tblJogo(jId INTEGER PRIMARY KEY AUTOINCREMENT, uId INTEGER NOT NULL, nId INTEGER NOT NULL, cId INTEGER NOT NULL, publicHelp INTEGER NOT NULL, phoneHelp INTEGER NOT NULL, fiftyFiftyHelp INTEGER NOT NULL, terminated INTEGER NOT NULL, pontuacao INTEGER NOT NULL, FOREIGN KEY (nId) REFERENCES tblNivel(nId), FOREIGN KEY (uId) REFERENCES tblUtilizador(uId), FOREIGN KEY (cId) REFERENCES tblCategoria(cId))");
         db.execSQL("CREATE TABLE tblPergunta(pId INTEGER PRIMARY KEY AUTOINCREMENT,pergunta VARCHAR(200) NOT NULL, resp1 VARCHAR(100) NOT NULL,  resp2 VARCHAR(100) NOT NULL, resp3 VARCHAR(100) NOT NULL, resp4 VARCHAR(100) NOT NULL, respCorreta VARCHAR(100) NOT NULL, nId INTEGER NOT NULL, pontuacao INTEGER NOT NULL, cId INTEGER NOT NULL, FOREIGN KEY (nId) REFERENCES tblNivel(nId), FOREIGN KEY (cId) REFERENCES tblCategoria(cId))");
         db.execSQL("CREATE TABLE tblJogadas(jgId INTEGER PRIMARY KEY, jId INTEGER ,pId INTEGER, FOREIGN KEY (jId) REFERENCES tblJogo(jId), FOREIGN KEY (pId) REFERENCES tblPergunta(pId))");
+
+        db.execSQL("INSERT INTO tblNivel (nome, descricao) VALUES('Facil', 'modo facil')");
+        db.execSQL("INSERT INTO tblCategoria (nome, descricao) VALUES('Cultura geral', 'Perguntas de conhecimento geral')");
+        db.execSQL("INSERT INTO tblPergunta (pergunta, resp1, resp2, resp3, resp4, respCorreta, nId, pontuacao, cId) VALUES('Qual é a matéria mais dura encontrada na natureza?', 'Diamante negro', 'Obsidium', 'Carvao', 'Calhau', 'Diamante negro', 1, 100, 1) ");
+        db.execSQL("INSERT INTO tblPergunta (pergunta, resp1, resp2, resp3, resp4, respCorreta, nId, pontuacao, cId) VALUES('Por meio de qual substância prima é fabricado o papel?', 'Celulose vegetal', 'Celulose animal', 'Celulose bacteriana', 'Celulose microcristalina', 'Celulose vegetal', 1, 100, 1) ");
+        db.execSQL("INSERT INTO tblPergunta (pergunta, resp1, resp2, resp3, resp4, respCorreta, nId, pontuacao, cId) VALUES('Qual é a vitamina que a pele humana absorve em contato com a luz solar?', 'Vitamina D', 'Vitamina C', 'Vitamina D1', 'Vitamina A', 'Vitamina D', 1, 100, 1) ");
+        db.execSQL("INSERT INTO tblPergunta (pergunta, resp1, resp2, resp3, resp4, respCorreta, nId, pontuacao, cId) VALUES('Qual é o alimento mais completo da natureza?', 'Leite', 'Abacaxi', 'Arroz', 'Batata', 'Leite', 1, 100, 1) ");
+        db.execSQL("INSERT INTO tblPergunta (pergunta, resp1, resp2, resp3, resp4, respCorreta, nId, pontuacao, cId) VALUES('Que nome era dado à carta de libertação de um escravo?', 'Alforria', 'Carta de Libertaçao', 'Carta de condução', 'Alvará', 'Alforria', 1, 100, 1) ");
+        db.execSQL("INSERT INTO tblPergunta (pergunta, resp1, resp2, resp3, resp4, respCorreta, nId, pontuacao, cId) VALUES('A quantos graus centígrados na escala Celsius a água ferve?', '100º', '77º', '90º', '-100º', '100º', 1, 100, 1) ");
+        db.execSQL("INSERT INTO tblPergunta (pergunta, resp1, resp2, resp3, resp4, respCorreta, nId, pontuacao, cId) VALUES('Qual é o menor e mais quente planeta do sistema solar?', 'Mercurio', 'Saturno', 'Terra', 'Marte', 'Mercurio', 1, 100, 1) ");
+        //teste
     }
 
     @Override
