@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_stats"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="quizdroid.estgf.ipp.pt.quizdroid.StatsActivity">
+
+
+    <TextView
+        android:text="Fonseca"
+        android:textSize="40dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/txt_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TableLayout
+        android:layout_below="@id/txt_username"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="1">
+
+        <TableRow>
+            <TextView
+                android:text="Jogos Concluidos"
+                android:textAlignment="center"
+                android:padding="10dp"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_column="0"/>
+
+            <TextView
+                android:text="Total de pontos"
+                android:textAlignment="center"
+                android:layout_width="0dp"
+                android:padding="10dp"
+                android:layout_weight="0.5"
+                android:layout_column="1"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="123123"
+                android:textSize="30dp"
+                android:textAlignment="center"
+                android:padding="10dp"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:layout_column="0"/>
+
+            <TextView
+                android:text="34334"
+                android:textSize="30dp"
+                android:textAlignment="center"
+                android:padding="10dp"
+                android:layout_column="1"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="Melhor Score"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:padding="10dp"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="540"
+                android:textSize="70dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textAlignment="center"/>
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:text="Perguntas Respondidas"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:textAlignment="center"
+                android:padding="10dp"
+                android:layout_column="0"/>
+
+            <TextView
+                android:text="Perguntas corretas"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:textAlignment="center"
+                android:padding="10dp"
+                android:layout_column="1"/>
+
+        </TableRow>
+        <TableRow>
+            <TextView
+                android:text="12889"
+                android:textSize="30dp"
+                android:layout_width="0dp"
+                android:layout_weight="0.5"
+                android:textAlignment="center"
+                android:padding="10dp"
+                android:layout_column="0"/>
+
+            <TextView
+                android:text="10234"
+                android:layout_width="0dp"
+                android:textSize="30dp"
+                android:layout_weight="0.5"
+                android:textAlignment="center"
+                android:padding="10dp"
+                android:layout_column="1"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="Racio de perguntas acertadas"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:padding="10dp"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="0.534"
+                android:textSize="70dp"
+                android:textColor="#58FA58"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:textAlignment="center"/>
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>
+    </ScrollView>
