@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="quizdroid.estgf.ipp.pt.quizdroid.MainActivity">
+
+    <Button
+        android:id="@+id/btn_continuar"
+        android:text="Continuar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/continuar_icon"
+        />
+
+    <Button
+        android:id="@+id/btn_play"
+        android:text="Play"
+        android:layout_below="@id/btn_continuar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/play_icon"
+        />
+
+
+    <Button
+        android:id="@+id/btn_custom_play"
+        android:text="Custom play"
+        android:layout_below="@id/btn_play"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/custom_play_icon"
+        />
+
+    <Button
+        android:id="@+id/btn_battle"
+        android:text="Battle"
+        android:layout_below="@id/btn_custom_play"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/multiplayer_icon"
+        />
+
+    <Button
+        android:id="@+id/btn_stats"
+        android:text="Stats"
+        android:layout_below="@id/btn_battle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/stats_icon"
+        />
+
+    <Button
+        android:id="@+id/btn_preferences"
+        android:text="Preferences"
+        android:layout_below="@id/btn_stats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/preference_icon"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_jogo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="quizdroid.estgf.ipp.pt.quizdroid.JogoActivity">
+    <ImageView
+        android:id="@+id/half_help"
+        android:clickable="true"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/help1"
+        />
+
+    <ImageView
+        android:id="@+id/public_help"
+        android:clickable="true"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/help2"
+        android:layout_toRightOf="@id/half_help"
+        />
+
+    <ImageView
+        android:id="@+id/phone_help"
+        android:clickable="true"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/help3"
+        android:layout_toRightOf="@id/public_help"
+        />
+
+    <TextView
+        android:id="@+id/txt_pontos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pontos: "
+        android:layout_toRightOf="@id/phone_help"
+        android:textSize="30dp"
+        />
+
+    <TextView
+        android:id="@+id/static_pontos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/static_pontos"
+        android:gravity="right"
+        android:text="10000"
+        android:textSize="30dp"
+        />
+
+    <TextView
+        android:id="@+id/txt_pergunta"
+        android:layout_below="@id/half_help"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:textSize="25dp"
+        android:text="Será isto uma pergunta exemplo?"
+        />
+
+    <Button
+        android:id="@+id/txt_resposta1"
+        android:layout_below="@id/txt_pergunta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="Resposta 1"
+        />
+
+    <Button
+        android:id="@+id/txt_resposta2"
+        android:layout_below="@id/txt_resposta1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="Resposta 2"
+        />
+
+    <Button
+        android:id="@+id/txt_resposta3"
+        android:layout_below="@id/txt_resposta2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="Resposta 3"
+        />
+
+    <Button
+        android:id="@+id/txt_resposta4"
+        android:layout_below="@id/txt_resposta3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="Resposta 4"
+        />
+
+</RelativeLayout>
